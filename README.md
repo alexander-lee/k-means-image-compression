@@ -17,11 +17,11 @@ python image_k_means.py <image_name> [-k <default: 10>] [--iterations <default: 
 ## Results
 
 | **Input Image**  | **5-means Clustering (with 20 iterations)** |
-| ------------- | ------------- |
+| :---:  | :---:  |
 |![Sloth](https://github.com/alexander-lee/k-means-image-compression/blob/master/results/Sloth.jpg?raw=true)|![5-means Sloth](https://github.com/alexander-lee/k-means-image-compression/blob/master/results/Sloth_compressed_5.png?raw=true)|
 | **10-means Clustering (with 20 iterations**  | **20-means Clustering (with 20 iterations)** |
 |![10-means Sloth](https://github.com/alexander-lee/k-means-image-compression/blob/master/results/Sloth_compressed_10.png?raw=true)|![20-means Sloth](https://github.com/alexander-lee/k-means-image-compression/blob/master/results/Sloth_compressed_20.png?raw=true)|
 
 | **Input Scatter Plot by Color**  | **20-means Clustering Scatter Plot by Color** |
-| ------------- | ------------- |
+| :---:  | :---:  |
 | ![Input Scatter Plot](https://github.com/alexander-lee/k-means-image-compression/blob/master/results/Initial_Colors_Sloth.png?raw=true)  | ![20-means Scatter Plot](https://github.com/alexander-lee/k-means-image-compression/blob/master/results/20_Cluster_Colors_Sloth.png?raw=true)  |
