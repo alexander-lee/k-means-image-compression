@@ -1,8 +1,9 @@
 import argparse
 import numpy as np
-from skimage import io
+from skimage import io, img_as_float
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
+
 
 def print_distortion_distance(cluster_prototypes, points_by_label, k):
     distances = np.zeros((k,))
@@ -54,6 +55,7 @@ def k_means_clustering(image_vectors, k, num_iterations):
 
     return (labels, cluster_prototypes)
 
+
 # NOTE: UNUSED
 def assign_image_color_by_label(labels, cluster_prototypes):
     output = np.zeros(labels.shape + (3,))
@@ -101,8 +103,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
     params = vars(args)
 
-    image = io.imread(params['image_name'])[:,:,:3]  # Always read it as RGB (ignoring the Alpha)
-    image = image / 255  # Scale it to [0,1]
+    image = io.imread(params['image_name'])[:, :, :3]  # Always read it as RGB (ignoring the Alpha)
+    image = img_as_float(image)
 
     image_dimensions = image.shape
     # Get Image Name without the extension
@@ -126,7 +128,7 @@ if __name__ == '__main__':
     output_image = output_image.reshape(image_dimensions)
 
     print('Saving Compressed Image...')
-    io.imsave(image_name + '_compressed_' + str(params['k']) + '.png', output_image);
+    io.imsave(image_name + '_compressed_' + str(params['k']) + '.png', output_image, dtype=float)
     print('Image Compression Completed!')
 
     if (params['scatter']):
